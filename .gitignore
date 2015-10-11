@@ -1,0 +1,14 @@
+.vagrant/machines/default/virtualbox/action_provision
+.vagrant/machines/default/virtualbox/action_set_name
+.vagrant/machines/default/virtualbox/id
+.vagrant/machines/default/virtualbox/index_uuid
+.vagrant/machines/default/virtualbox/private_key
+.vagrant/machines/default/virtualbox/synced_folders
+.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory
+.idea/.name
+.idea/encodings.xml
+.idea/modules.xml
+.idea/monitor-web.iml
+.idea/scopes/scope_settings.xml
+.idea/vcs.xml
+.idea/workspace.xml

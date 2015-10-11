@@ -1,43 +1,12 @@
 {
   "name": "cronario/monitor-web",
-  "description": "web monitor for cronario",
+  "description": "Cronario monitor - web",
   "keywords": [
     "Cronario",
     "Monitor"
   ],
   "homepage": "http://cronar.io",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Gryaznov Vladislav",
-      "email": "v.gryaznov@interkassa.com",
-      "homepage": "https://interkassa.com",
-      "role": "Developer"
-    }
-  ],
   "require": {
-    "php": ">=5.5.0",
-    "cronario/cronario": "0.1.*"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "4.*"
-  },
-  "autoload": {
-    "psr-4": {
-      "MonitorWeb\\": "src"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "MonitorWeb\\Test\\": "tests"
-    }
-  },
-  "scripts": {
-    "test": "phpunit"
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "0.1.*-dev"
-    }
+    "cronario/messenger": "0.1.*"
   }
 }

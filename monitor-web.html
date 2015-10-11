@@ -6,16 +6,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cronario - monitor web">
     <meta name="author" content="cronario">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 
-    <div class='js-monitor-web'></div>
+<!-- navbar -->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Cronario monitor</a>
+        </div>
+        <div id="navbar">
+            <ul class="nav navbar-nav">
+                <!--<li class="active"><a href="#">Home</a></li>-->
+                <!--<li><a href="#">Home</a></li>-->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://github.com/cronario">github</a></li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
 
-    <script src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/monitor-web.js"></script>
-    <script>
-        MonitorWeb.init('.js-monitor-web');
-    </script>
+<div class="container">
+    <div class='js-holder'>
+        <!-- container for html -->
+    </div>
+</div>
+<!-- /container -->
+
+
+<script id="js-template" type="x-tmpl-mustache">
+
+    {{#data}}
+
+        <h1>{{appId}}</h1>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title pull-left">Daemon</h3>
+                <div class="btn btn-default btn-sm" data-app-id="{{appId}}" data-command="start">start</div>
+                <div class="btn btn-default btn-sm" data-app-id="{{appId}}" data-command="stop">stop</div>
+                <div class="btn btn-default btn-sm" data-app-id="{{appId}}" data-command="kill">kill</div>
+                <div class="clearfix"></div>
+            </div>
+
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>key-1 {{daemon.key-1}}</td>
+                        <td>key-... {{daemon.key-2}}</td>
+                        <td>key-... {{daemon.key-3}}</td>
+                        <td>key-... {{daemon.key-4}}</td>
+                    </tr>
+                    <tr>
+                        <td>key-... {{daemon.key-5}}</td>
+                        <td>key-... {{daemon.key-6}}</td>
+                        <td>key-... {{daemon.key-7}}</td>
+                        <td>key-... {{daemon.key-8}}</td>
+                    </tr>
+                    <tr>
+                        <td>key-... {{daemon.key-10}}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Queue</h3>
+            </div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>active</th>
+                    <th>Name</th>
+                    <th>total count</th>
+                    <th>total count</th>
+                    <th>total count</th>
+                    <th>total count</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#queues}}
+                    <tr>
+                        <td>{{active}}</td>
+                        <td>{{name}}</td>
+                        <td>{{count}}</td>
+                        <td>{{count}}</td>
+                        <td>{{count}}</td>
+                        <td>{{count}}</td>
+
+                    </tr>
+                {{/queues}}
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Manager</h3>
+            </div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>active</th>
+                    <th>Name</th>
+                    <th>total count</th>
+                    <th>total count</th>
+                    <th>total count</th>
+                    <th>total count</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#managers}}
+                    <tr>
+                        <td>{{active}}</td>
+                        <td>{{name}}</td>
+                        <td>{{count}}</td>
+                        <td>{{count}}</td>
+                        <td>{{count}}</td>
+                        <td>{{count}}</td>
+                    </tr>
+                {{/managers}}
+                </tbody>
+            </table>
+        </div>
+
+    <hr/>
+
+    {{/data}}
+
+    <p class='text-muted'>last request : {{ok}} , {{msg}}</p>
+
+
+</script>
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.3/mustache.min.js"></script>
+<script type="text/javascript" src="js/monitor-web.js"></script>
+<script>
+
+    MonitorWeb.init();
+
+</script>
 </body>
 </html>
